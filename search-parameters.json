@@ -65540,5 +65540,57 @@
         "le"
       ]
     }
-  }]
+  },
+  {
+      "fullUrl": "http://fhir.bbmri.de/Specimen-sample-diagnosis",
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "sample-diagnosis",
+        "url": "http://fhir.bbmri.de/Specimen-sample-diagnosis",
+        "version": "0.1.0",
+        "name": "sample-diagnosis",
+        "status": "active",
+        "description": "sample diagnosis",
+        "code": "sample-diagnosis",
+        "base": ["Specimen"],
+        "type": "token",
+		"xpathUsage": "normal",
+        "expression": "Specimen.extension.where(url='https://fhir.bbmri.de/StructureDefinition/SampleDiagnosis').value as CodeableConcept"
+      }
+  },
+    {
+      "fullUrl": "http://fhir.bbmri.de/Specimen-sample-custodian",
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "sample-custodian",
+        "url": "http://fhir.bbmri.de/Specimen-sample-custodian",
+        "version": "0.1.0",
+        "name": "sample-custodian",
+        "status": "active",
+        "description": "sample custodian",
+        "code": "sample-custodian",
+        "base": ["Specimen"],
+        "type": "token",
+		"xpathUsage": "normal",
+        "expression": "Specimen.extension.where(url='https://fhir.bbmri.de/StructureDefinition/Custodian').value as Reference"
+      }
+  },
+  {
+      "fullUrl": "http://fhir.bbmri.de/Specimen-storage-temperature",
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "storage-temperature",
+        "url": "http://fhir.bbmri.de/Specimen-storage-temperature",
+        "version": "0.1.0",
+        "name": "storage-temperature",
+        "status": "active",
+        "description": "storage temperature",
+        "code": "storage-temperature",
+        "base": ["Specimen"],
+        "type": "token",
+		"xpathUsage": "normal",
+        "expression": "Specimen.extension.where(url='https://fhir.bbmri.de/StructureDefinition/StorageTemperature').value as CodeableConcept"
+      }
+  }
+]
 }
