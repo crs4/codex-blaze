@@ -2,13 +2,15 @@ version: '3.7'
 services:
   fhir-server:
     container_name: fhir-server
-    build: .
+    build: 
+      context: .
+    image: crs4/blaze:0.1
     environment:
       BASE_URL: "http://fhir-server:8080"
       JAVA_TOOL_OPTIONS: "-Xmx4g"
       LOG_LEVEL: debug
     ports:
-    - ${PORT_BLAZE_FHIR:-127.0.0.1:8080}:8080
+    - ${PORT_BLAZE_FHIR:-127.0.0.1:8090}:8080
     volumes:
     - "blaze-data:/app/data"
 
